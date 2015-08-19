@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.nju.shalbum"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:name=".base.BaseApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.app.activity.LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.app.activity.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.app.qin.Personal_page"
+            android:label="@string/title_activity_personal_page" >
+        </activity>
+        <activity
+            android:name="com.app.activity.Personal_pageActivity"
+            android:label="个人主页"
+            android:parentActivityName="com.app.activity.MainActivity" >
+        </activity>
+        <activity
+            android:name="com.app.activity.AttentionActivity"
+            android:label="关注"
+            android:parentActivityName="com.app.activity.Personal_pageActivity" >
+        </activity>
+        <activity
+            android:name="com.app.activity.OtherPeopleActivity"
+            android:label="他人主页">
+        </activity>
+        <activity
+            android:name="com.app.activity.FansActivity"
+            android:label="粉丝"
+            android:parentActivityName="com.app.activity.Personal_pageActivity" >
+        </activity>
+        <activity
+            android:name="com.app.activity.ExploreActivity"
+            android:label="探索"
+            android:parentActivityName="com.app.activity.MainActivity" >
+        </activity>
+        <activity
+            android:name="com.app.activity.MessageActivity"
+            android:label="消息"
+            android:parentActivityName="com.app.activity.MainActivity" >
+        </activity>
+        <activity
+            android:name="com.app.activity.ShareActivity"
+            android:label="动态"
+            android:parentActivityName="com.app.activity.MainActivity" >
+        </activity>
+        <activity
+            android:name="com.app.activity.CollectActivity"
+            android:label="收藏"
+            android:parentActivityName="com.app.activity.MainActivity" >
+        </activity>
+        <activity
+            android:name="com.example.localphotodemo.SelectPhotoActivity"
+            android:label="添加图片"
+            android:parentActivityName="com.app.activity.MainActivity" >
+        </activity>
+        <activity
+            android:name="com.example.localphotodemo.MyListView4"
+            android:label="添加描述"
+            android:parentActivityName="com.example.localphotodemo.SelectPhotoActivity" >
+        </activity>
+        <activity
+            android:name="com.example.localphotodemo.TagActivity"
+            android:label="添加标签"
+            android:parentActivityName="com.example.localphotodemo.MyListView4" >
+        </activity>
+        <activity
+            android:name="com.example.localphotodemo.TitleActivity"
+            android:label="添加标题"
+            android:parentActivityName="com.example.localphotodemo.TagActivity" >
+        </activity>
+        <activity
+            android:name="com.app.activity.DisplayPhotoActivity"
+            android:label="查看照片"
+            android:parentActivityName="com.app.activity.MainActivity" >
+        </activity>
+        <!-- 配置用户反馈 -->
+        <activity
+            android:name="com.umeng.fb.ConversationActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.umeng.fb.ContactActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <!-- ###################注册SDK使用的Activity###################### -->
+        <!-- 分享编辑页 -->
+        <activity
+            android:name="com.umeng.socialize.view.ShareActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:theme="@style/Theme.UMDialog"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+
+        <!-- ############ QQ空间和QQ SSO授权的Activity注册 ############ -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- 100424468，如果你使用的公用账号，则不需要修改；否则修改成你在QQ开放平台申请的 APP ID -->
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tencent.plus.ImageActivity" />
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <!-- 配置友盟的消息推送 -->
+        <receiver
+            android:name="com.umeng.message.NotificationProxyBroadcastReceiver"
+            android:exported="false" >
+        </receiver>
+        <receiver android:name="com.umeng.message.RegistrationReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.umeng.message.UmengBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="edu.nju.shalbum.intent.action.COMMAND" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RE_ELECTION_V2" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.umeng.message.UmengService"
+            android:exported="true"
+            android:process=":umengService_v1" >
+            <intent-filter>
+                <action android:name="edu.nju.shalbum.intent.action.START" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="edu.nju.shalbum.intent.action.COCKROACH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.PING" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="org.android.agoo.service.ElectionService"
+            android:exported="true"
+            android:process=":umengService_v1" >
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.ELECTION_V2" />
+            </intent-filter>
+        </service>
+        <service android:name="com.umeng.message.UmengIntentService" />
+        <!-- 友盟的appkey和消息密钥 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="539c173a56240ba62909b88b" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="56c803990ac3b3c99008575b13b893bf" >
+        </meta-data>
+    </application>
+    <!-- 配置所有的用户权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- V1.2.3新增的权限, GET_TASKS用于检测APP是否处于前台、是否活着；REORDER_TASKS用于将APP切换到前台 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+
+</manifest>
