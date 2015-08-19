@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+     <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/titlebar">
+
+        <ImageButton
+            android:id="@+id/btnback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/backbutton_selector" />
+        
+        <TextView
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="28dp"
+            android:ellipsize="end"
+            android:text="返回"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="添加标签"
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            />
+
+        <ImageButton
+            android:id="@+id/btnright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/rightbutton_selector"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/title"
+            android:layout_alignRight="@+id/btnright"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="28dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="完成"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top"
+        android:background="@drawable/application_background" >
+
+        <!-- 注意，这里的TextView中的text并不是真正的tag，要修改需要到activity_tag中的string[] tagArray -->
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:columnCount="3"
+            android:gravity="center_vertical|right"
+            android:rowCount="5" >
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/button1"
+                android:background="@drawable/shape_tag"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:src="@drawable/tag1" />
+            
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="电脑"
+                android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/button2"
+                android:background="@drawable/shape_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tag2" />
+            <TextView 
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_gravity="center_horizontal"
+                android:text="手机"
+                android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/button3"
+                android:background="@drawable/shape_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tag3" />
+            <TextView 
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_gravity="center_horizontal"
+                android:text="食品"
+                android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/button4"
+                android:background="@drawable/shape_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tag4" />
+            <TextView 
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_gravity="center_horizontal"
+                android:text="游戏"
+                android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/button5"
+                android:background="@drawable/shape_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tag5" />
+            <TextView 
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_gravity="center_horizontal"
+                android:text="服装"
+                android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/button6"
+                android:background="@drawable/shape_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tag6" />
+            <TextView 
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_gravity="center_horizontal"
+                android:text="手机配件"
+                android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+           <LinearLayout
+               	android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/button7"
+                android:background="@drawable/shape_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tag7" />
+            <TextView 
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_gravity="center_horizontal"
+                android:text="电脑配件"
+                android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+           <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/button8"
+                android:background="@drawable/shape_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tag8" />
+            <TextView 
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_gravity="center_horizontal"
+                android:text="运动"
+                android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/button9"
+                android:background="@drawable/shape_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tag9" />
+            <TextView 
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_gravity="center_horizontal"
+                android:text="日用品"
+                android:textColor="#FFFFFF"/>
+            </LinearLayout>
+        </GridLayout>
+    </RelativeLayout>
+
+    
+
+</RelativeLayout>

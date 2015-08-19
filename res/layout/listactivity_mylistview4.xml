@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         android:background="@drawable/application_background">
+
+    
+      <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/titlebar">
+
+        <ImageButton
+            android:id="@+id/btnback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/backbutton_selector" />
+        
+        <TextView
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="28dp"
+            android:ellipsize="end"
+            android:text="返回"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="添加描述"
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            />
+
+        <ImageButton
+            android:id="@+id/btnright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/rightbutton_selector"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/title"
+            android:layout_alignRight="@+id/btnright"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="28dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="完成"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+     <ListView android:id="@id/android:list"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"  
+              android:divider="#00ffffff"
+              android:listSelector="#00ffffff"  
+              android:layout_weight="1"
+              android:dividerHeight="10dp"
+              />
+     
+     <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp" 
+        android:background="@color/light_black">
+
+        <TextView
+            android:id="@+id/camera"
+            android:background="@drawable/camerabutton_selector"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="拍照"
+            android:textColor="@color/common_text" />
+        
+    </RelativeLayout>
+
+</LinearLayout>
